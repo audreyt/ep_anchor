@@ -5,10 +5,11 @@ out$.acePostWriteDomLineHTML = acePostWriteDomLineHTML = function(name, args){
     var insides, a, i$, ref$, len$, cls, c, ref1$, key, val;
     if (!$(this).children('a').length) {
       insides = this.innerHTML;
-      a = $('<a>');
+      a = $('<a class="anchor">');
       for (i$ = 0, len$ = (ref$ = this.className.split(/ /)).length; i$ < len$; ++i$) {
         cls = ref$[i$];
         if (/^anchor-/.test(cls)) {
+          $(a).addClass(cls);
           c = cls.slice(7);
           ref1$ = /^href/.test(c)
             ? ['href', c.slice(4)]
