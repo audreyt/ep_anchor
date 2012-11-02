@@ -1,6 +1,6 @@
-description: 'Add anchor tag (link) pass-through support to Etherpad Lite.'
+description: 'And Etherpad Lite Plugin. Adds anchor tag (link) pass-through support to Etherpad Lite.'
 name: 'ep_anchor'
-version: '0.0.1'
+version: '0.0.2'
 author:
   name: 'George Zahariev'
   email: 'z@georgezahariev.com'
@@ -17,3 +17,4 @@ devDependencies:
   LiveScript: '1.1.x'
 repository:
   type: 'git'
+  url: 'git://github.com/gkz/ep_anchor.git'
