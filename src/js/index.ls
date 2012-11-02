@@ -3,9 +3,8 @@ require! 'ep_etherpad-lite/static/js/rjquery'.$
 export ace-post-write-dom-line-HTML = (name, args) ->
   $ args.node .find '.anchor' .each ->
     unless $ this .children 'a' .length
-      insides = @innerHTML
       a = $ '<a class="anchor">'
-      for cls in @className.split(/ /) when /^anchor-/.test cls
+      for cls in @class-name.split(/ /) when /^anchor-/.test cls
         $ a .add-class cls
         c = cls.slice 7
         [key, val] = if /^href/.test c
@@ -14,9 +13,9 @@ export ace-post-write-dom-line-HTML = (name, args) ->
           ['title' c.slice 5]
         else if /^name/.test c
           ['name' c.slice 4]
-        $ a .attr key, decodeURIComponent val
+        $ a .attr key, decode-URI-component val
       
-      $ this .replace-with <| $ a .html insides
+      $ this .replace-with <| $ a .html @inner-HTML
 
 export ace-attribs-to-classes = (name, {key}) ->
   if /^class-anchor/.test key

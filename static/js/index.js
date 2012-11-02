@@ -2,9 +2,8 @@ var $, acePostWriteDomLineHTML, aceAttribsToClasses, out$ = typeof exports != 'u
 $ = require('ep_etherpad-lite/static/js/rjquery').$;
 out$.acePostWriteDomLineHTML = acePostWriteDomLineHTML = function(name, args){
   return $(args.node).find('.anchor').each(function(){
-    var insides, a, i$, ref$, len$, cls, c, ref1$, key, val;
+    var a, i$, ref$, len$, cls, c, ref1$, key, val;
     if (!$(this).children('a').length) {
-      insides = this.innerHTML;
       a = $('<a class="anchor">');
       for (i$ = 0, len$ = (ref$ = this.className.split(/ /)).length; i$ < len$; ++i$) {
         cls = ref$[i$];
@@ -19,7 +18,7 @@ out$.acePostWriteDomLineHTML = acePostWriteDomLineHTML = function(name, args){
           $(a).attr(key, decodeURIComponent(val));
         }
       }
-      return $(this).replaceWith($(a).html(insides));
+      return $(this).replaceWith($(a).html(this.innerHTML));
     }
   });
 };
