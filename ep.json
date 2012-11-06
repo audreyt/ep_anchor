@@ -1,7 +1,7 @@
 {
   "parts": [
     {
-      "name": "main",
+      "name": "anchor",
       "client_hooks": {
         "acePostWriteDomLineHTML": "ep_anchor/static/js/index",
         "aceAttribsToClasses": "ep_anchor/static/js/index"
